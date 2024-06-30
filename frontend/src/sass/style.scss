@@ -1,6 +1,6 @@
-@forward 'base';
-@forward 'routes';
-@forward 'components';
-@forward 'helpers';
-@forward 'layout';
-@forward 'theme';
+@import 'base/index';
+@import 'routes/index';
+@import 'components/index';
+@import 'helpers/index';
+@import 'layout/index';
+@import 'theme/index';

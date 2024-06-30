@@ -1,5 +1,5 @@
-@forward 'routes/home';
-@forward 'routes/playerAddPage';
-@forward 'routes/playerEditPage';
-@forward 'routes/playerDetailPage';
-@forward 'routes/playerListPage';
+@forward './home';
+@forward './playerAddPage';
+@forward './playerEditPage';
+@forward './playerDetailPage';
+@forward './playerListPage';

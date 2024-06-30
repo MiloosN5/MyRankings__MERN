@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  word-break: break-word; 
+}
+
+body,
+html,
+#root {
+  width: 100%; 
+  min-height: 100vh; 
+  height: auto; 
+}
+
+a {
+  text-decoration: none; 
+  cursor: pointer; 
+  color: canvastext;
+}
+
+button {
+  outline: none;  
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+}
+
+ul {
+  list-style: none; 
+}
+
+img,
+svg {
+  display: block; 
+}
+
+input {
+  outline: none; 
+  border: none; 
+}
+
+fieldset {
+  outline: none; 
+  border: none; 
+}

@@ -1,0 +1,48 @@
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.dropdown {
+    @include m.flexbox(
+        $direction: column,
+        $align-items: center
+    );
+    &__select {
+        @include m.flexbox(
+            $direction: row,
+            $align-items: center,
+            $justify-content: center,
+            $gap: f.rem(10)
+        );
+        @include m.dimensions($height: f.rem(50));
+    }
+    &__options {
+        @include m.flexbox(
+            $direction: column,
+            $justify-content: center
+        );
+        @include m.dimensions(
+            $max-height: 0,
+            $width: 100%
+        );
+        @include m.transition();
+        @include m.overflow(hidden);
+        li {
+            @include m.flexbox($direction: row);
+            @include m.transition();
+            button {
+                @include m.font(
+                    $font-size: f.rem(14), 
+                    $desktop-font-size: f.rem(16)
+                );
+                flex: 1;
+            }
+        }
+        &.show {
+            max-height: f.rem(500);
+        }
+    }
+    &.open {
+        max-height: 100%;
+    }
+}

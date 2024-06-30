@@ -1,0 +1,41 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.filter {
+    &--rankings {
+        &__wrapper {
+            @include m.paddings(
+                $padding-block: f.rem(20), 
+                $padding-inline: f.rem(20)
+            );
+            @include m.flexbox(
+                $direction: column,
+                $justify-content: center,
+                $gap: f.rem(20),
+                $desktop-direction: row,
+                $desktop-wrap: wrap
+            );
+        }
+        &__item {
+            @include m.flexbox(
+                $direction: row,
+                $justify-content: center
+            );
+        }
+    }
+}
+
+@include m.breakpoint-up('desktop') {
+
+    .filter {
+        &--rankings {
+            &__item {
+                flex: 1 1 f.rem(200);
+                &:last-of-type {
+                    flex-grow: 9999;
+                }
+            }
+        }
+    }
+
+}

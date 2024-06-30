@@ -1,0 +1,34 @@
+@use 'sass:map';
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.page {
+  &__wrapper {
+    @include m.transition();
+    @include m.paddings(
+      $padding-block: map.get(v.$padding, 'p-page--standard') calc(map.get(v.$height, 'h-header--standard') + map.get(v.$padding, 'p-page--standard')), 
+      $padding-inline: 'p-page--standard', 
+      $desktop-padding-block: 'p-page--desktop', 
+      $desktop-padding-inline: calc(map.get(v.$width, 'w-header--desktop') + map.get(v.$padding, 'p-page--desktop')) map.get(v.$padding, 'p-page--desktop')
+    );
+    @include m.flexbox(
+      $direction: column, 
+      $align-items: center, 
+      $justify-content: center
+    );
+    @include m.dimensions($min-height: 100vh);
+  }
+}
+
+@include m.breakpoint-up('desktop') {
+
+  .page {
+    &__wrapper {
+      &.expand {
+        padding-inline-start: calc(map.get(v.$width, 'w-header--hover') + map.get(v.$padding, 'p-page--desktop'));
+      }
+    }
+  }
+
+}

@@ -1,0 +1,37 @@
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.icon {
+    @include m.dimensions($width: f.rem(24), $height: f.rem(24));
+}
+
+.iconimg {
+    @include m.dimensions($width: f.rem(30), $height: f.rem(30));
+}
+
+.flag {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    @include m.border(
+        $mobile-border: f.rem(1) solid white,
+        $desktop-border: f.rem(3) solid white
+    );
+}
+
+figure {
+    @include m.position($position: relative);
+}
+
+figcaption {
+    @include m.position($position: absolute, $bottom: 0, $right: 0);
+    background-color: white;
+    a {
+        @include m.paddings(
+            $padding-block: f.rem(5),
+            $padding-inline: f.rem(5)
+        );
+        font-style: italic;
+        font-size: f.rem(14);
+    }
+}
+

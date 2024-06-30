@@ -1,0 +1,28 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.input {
+    @include m.flexbox(
+        $wrap: wrap, 
+        $align-items: center
+    );
+    @include m.dimensions($width: 100%);
+    input {
+        @include m.paddings(
+            $padding-block: f.rem(5), 
+            $padding-inline: f.rem(5)
+        );
+    }
+}
+
+.search {
+    input {
+        @include m.dimensions($width: 100%);
+    }
+}
+
+label {
+    &.hidden {
+        @include m.hidden($display: none);
+    }
+}

@@ -1,0 +1,77 @@
+@use 'sass:map';
+@use './functions' as f;
+@use './animations' as *;
+
+$breakpoints: (
+    'mobile': f.em(478),
+    'desktop': f.em(768)
+);
+
+$font: (
+    'ff-sansSerif-root': ('Quicksand', sans-serif),
+    'ff-sansSerif-2': ('Bebas Neue', sans-serif),
+    'ff-handwriting': ('Zeyada', cursive),
+    'fs-root--standard': f.rem(16),
+    'fs-root--desktop': f.rem(18),
+    'fw-root': 500,
+    'ls-root': 0,
+    'lh-root': 1.5
+);
+
+$grid: (
+
+);
+
+$flex: (
+
+);
+
+$width: (
+    'w-header--hover': f.rem(264),
+    'w-header--desktop': f.rem(110)
+);
+
+$height: (
+    'h-header--standard': f.rem(110),
+);
+
+$padding: (
+    'p-page--standard': f.rem(10),
+    'p-page--desktop': f.rem(40)
+);
+
+$border: (
+
+);
+
+$margin: (
+
+);
+
+$position: (
+
+);
+
+$transition: (
+    'transition-root': 0.5s ease-in-out
+);
+
+$animation: (
+    'animation-table': animationTable 2s ease-in-out,
+    'animation-error--fadeIn': animationErrorFadeIn 0.5s ease-in-out,
+    'animation-error--fadeOut': animationErrorFadeOut 0.5s ease-in-out
+);
+
+$overflow: (
+    
+);
+
+$filter: (
+    'filter-1': grayscale(100%) opacity(0.5),
+    'filter-2': grayscale(0%) opacity(1)
+);
+
+$hidden: (
+    
+);
+

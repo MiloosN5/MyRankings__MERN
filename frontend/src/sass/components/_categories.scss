@@ -1,0 +1,123 @@
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.categories {
+    &__wrapper {
+        @include m.dimensions($height: 100%);
+        @include m.flexbox($direction: column);
+    }
+    &__content {
+        @include m.grid(
+            $template-cols: 1fr,
+            $template-rows: auto f.rem(30) auto,
+            $gap: f.rem(10),
+            $desktop-template-cols: 1fr f.rem(30) 1fr,
+            $desktop-template-rows: auto
+        );
+    }
+    &__category {
+        @include m.grid(
+            $template-cols: 1fr,
+            $template-rows: f.rem(30),
+            $gap: f.rem(10),
+            $mobile-template-cols: f.rem(100) 1fr,
+            $mobile-template-rows: auto,
+            $desktop-template-cols: 1fr,
+            $desktop-template-rows: f.rem(30)
+        );
+        align-items: center;
+
+        &--men,
+        &--women {
+            @extend .categories__category;
+        }
+    }
+
+    &__link {
+        @include m.dimensions(
+            $width: 100%,
+            $height: f.rem(200),
+            $mobile-width: 70%,
+            $desktop-width: 100%,
+            $desktop-height: f.rem(360)
+        );
+        @include m.transition();
+        cursor: pointer;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &--men {
+            @extend .categories__link;
+            background-image: url('./assets/Djokovic__01__edit.jpg');
+            &:hover {
+                background-image: url('./assets/Djokovic__01.jpg');
+            }
+        }
+
+        &--women {
+            @extend .categories__link;
+            background-image: url('./assets/Swiatek__01__edit.jpg');
+            &:hover {
+                background-image: url('./assets/Swiatek__01.jpg');
+            }
+        }
+    }
+
+    &__separator {
+        @include m.flexbox(
+            $direction: row,
+            $justify-content: center,
+            $mobile-justify-content: start
+        );
+
+        img {
+            @include m.transition();
+        }
+
+        &.move {
+            &--men {
+                img {
+                    @include m.margins(
+                        $mobile-margin-block: f.rem(-30) 0,
+                        $desktop-margin-block: 0 0,
+                        $desktop-margin-inline: f.rem(-30) 0
+                    );
+                }
+            }
+
+            &--women {
+                img {
+                    @include m.margins(
+                        $mobile-margin-block: f.rem(30) 0,
+                        $desktop-margin-block: 0 0,
+                        $desktop-margin-inline: f.rem(30) 0
+                    );
+                }
+            }
+        }
+    }
+}
+
+@include m.breakpoint-up('mobile') {
+    .categories {
+        &__wrapper {
+            text-align: left;
+        }
+        &__link {
+            justify-self: right;
+        }
+    }
+}
+
+@include m.breakpoint-up('desktop') {
+    .categories {
+        &__wrapper {
+            text-align: center;
+        }
+        &__link {
+            justify-self: auto;
+        }
+    }
+}

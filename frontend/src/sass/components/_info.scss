@@ -1,0 +1,153 @@
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.info {
+    &--player {
+        &__wrapper {
+            @include m.dimensions($max-width: f.rem(800));
+            @include m.margins($margin-inline: auto);
+        }
+        &__content {
+            @include m.paddings(
+                $padding-block: f.rem(10), 
+                $padding-inline: f.rem(10), 
+                $mobile-padding-block: f.rem(20), 
+                $mobile-padding-inline: f.rem(20), 
+                $desktop-padding-block: f.rem(30),
+                $desktop-padding-inline: f.rem(30)
+            );
+            @include m.grid(
+                $template-cols: 1fr,
+                $template-rows: 1fr auto,
+                $mobile-template-cols: 1fr 1fr
+            );
+            align-items: center;
+            text-align: center;
+        }
+        &__part {
+            @include m.grid($template-cols: 1fr);
+            justify-items: center;
+            @include m.transition();
+            @include m.paddings(
+                $padding-block: f.rem(10), 
+                $padding-inline: f.rem(10)
+            );
+            div {
+                @include m.grid();
+                @include m.paddings(
+                    $padding-block: f.rem(10), 
+                    $padding-inline: f.rem(10)
+                );
+                @include m.dimensions($width: 100%);
+                text-align: center;
+                justify-items: center;
+            }
+            &:hover:not(.info--player__part--image) {
+                box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                cursor: pointer;
+            }
+            &--image {
+                @extend .info--player__part;
+                @include m.paddings(
+                    $padding-block: f.rem(10), 
+                    $padding-inline: f.rem(10)
+                );
+                grid-row: 1 / 3;
+                figure {
+                    @include m.dimensions($width: 90%);
+                    aspect-ratio: 1 / 1.2;
+                    background-position: top;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    @include m.border($border: 4px solid white);
+                }
+            }
+            &--basic {
+                @extend .info--player__part;
+                dd {
+                    span {
+                        font-size: f.rem(26);
+                    }
+                    &:nth-of-type(1) {
+                        span {
+                            font-size: f.rem(40);
+                        }
+                    }
+                }
+            }
+            &--rankings {
+                @extend .info--player__part;
+                div {
+                    @include m.grid($template-cols: 1fr 1fr);
+                }
+            }
+            &--titles-WTA {
+                @extend .info--player__part;
+                div {
+                    @include m.grid($template-cols: 1fr 1fr 1fr);
+                }
+            }
+            &--titles-ITF {
+                @extend .info--player__part;
+                div {
+                    @include m.grid($template-cols: 1fr 1fr);
+                }
+            }
+            &--personal {
+                @extend .info--player__part;
+            }
+            &--grandslams {
+                @extend .info--player__part;
+                div {
+                    @include m.grid($template-cols: 1fr 1fr 1fr 1fr);
+                }
+            }
+        }
+        &__dl {
+            @include m.flexbox($direction: column);
+            dt {
+                @include m.flexbox($direction: row);
+                span {
+                    @include m.flexbox($direction: row);
+                }
+            }
+            dd {
+                @include m.flexbox($direction: column);
+                @include m.paddings($padding-block: f.rem(10) 0);
+            }
+        }
+        &__noinfo {
+            @include m.flexbox(
+                $direction: column, 
+                $align-items: center, 
+                $justify-content: center
+            );
+
+            @include m.paddings(
+                $padding-block: f.rem(30), 
+                $padding-inline: f.rem(30)
+            );
+        }
+    }
+}
+
+@include m.breakpoint-up('mobile') {
+    .info {
+        &--player {
+            &__part {
+                &--image {
+                    div {
+                        grid-row: 1 / 3;
+                    }
+                    figure {
+                        aspect-ratio: 1 / 1.5;
+                    }
+                }
+                &--grandslams {
+                    grid-column-end: span 2;
+                }
+            }
+        }
+    }
+}

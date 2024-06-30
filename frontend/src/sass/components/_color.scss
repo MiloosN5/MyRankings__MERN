@@ -1,0 +1,27 @@
+@use '../helpers/mixins' as m;
+
+.color {
+  &-theme {
+    @include m.dimensions(
+      $width: 100%,
+      $height: 100%
+    );
+    &__wrapper {
+      @include m.dimensions(
+        $width: 100%,
+        $height: 100%
+      );
+      @include m.flexbox(
+        $direction: row,
+        $align-items: center,
+        $justify-content: center
+      );
+    }
+    &__button {
+      @include m.dimensions(
+        $width: 100%,
+        $height: 100%
+      );
+    }
+  }
+}

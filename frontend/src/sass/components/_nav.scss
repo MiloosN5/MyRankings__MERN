@@ -1,0 +1,259 @@
+@use 'sass:map';
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.nav {
+    @include m.dimensions(
+        $height: 100%, 
+        $width: 100%
+    );
+
+    &__list {
+        @include m.dimensions(
+            $height: 100%, 
+            $width: 100%
+        );
+        @include m.flexbox(
+            $direction: row, 
+            $desktop-direction: column
+        );
+
+        &--sub {
+            @include m.dimensions($width: 100%);
+            @include m.flexbox(
+                $direction: row, 
+                $desktop-direction: column
+            );
+            @include m.transition();
+            @include m.overflow(hidden);
+            flex: 0 0 0;
+        }
+    }
+
+    &__item {
+        @include m.flexbox(
+            $direction: row,
+            $justify-content: center,
+            $align-items: center,
+            $desktop-direction: column,
+            $desktop-align-items: start
+        );
+        @include m.dimensions(
+            $width: 100%, 
+            $desktop-min-height: f.rem(110)
+        );
+        @include m.transition();
+        @include m.overflow(hidden);
+        flex: 1;
+
+        &--logo {
+            @extend .nav__item;
+        }
+
+        &--route {
+            @extend .nav__item;
+            flex-direction: column;
+
+            &:hover {
+                .nav {
+                    &__link {
+                        &--nolink {
+                            flex: 0 0 70%;
+                        }
+                    }
+
+                    &__list {
+                        &--sub {
+                            flex: 0 0 30%;
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        &--subroute {
+            @extend .nav__item;
+            @include m.filter('filter-1');
+        }
+
+        &--social {
+            @extend .nav__item;
+            @include m.margins($desktop-margin-block: auto 0);
+        }
+    }
+
+    &__link {
+        @include m.flexbox(
+            $direction: row,
+            $justify-content: center,
+            $align-items: center
+        );
+        @include m.dimensions($height: 100%);
+        @include m.transition();
+        flex: 1;
+
+        &--logo {
+            @extend .nav__link;
+            width: 100%;
+            @include m.paddings($desktop-padding-inline: f.rem(45));
+        }
+
+        &--subroute {
+            @extend .nav__link;
+            @include m.paddings($desktop-padding-inline: f.rem(45));
+        }
+
+        &--social {
+            @extend .nav__link;
+            @include m.filter('filter-1');
+
+            &:nth-of-type(1) {
+                @include m.paddings(
+                    $padding-block: f.rem(5) 0, 
+                    $desktop-padding-block: 0 0
+                );
+            }
+
+            &:nth-of-type(3) {
+                @include m.paddings(
+                    $padding-block: 0 f.rem(5), 
+                    $desktop-padding-block: 0 0
+                );
+            }
+        }
+
+        &--nolink {
+            @include m.dimensions(
+                $width: 100%,
+                $height: 100%
+            );
+            @include m.flexbox(
+                $direction: row,
+                $justify-content: center,
+                $align-items: center
+            );
+            @include m.paddings($desktop-padding-inline: f.rem(45));
+            @include m.transition();
+            flex: 0 0 100%;
+        }
+    }
+    &__text {
+        @include m.transition();
+        @include m.flexbox();
+        @include m.hidden($display: none);
+        @include m.dimensions($desktop-width: 0);
+        white-space: nowrap;
+        &--logo {
+            @extend .nav__text;
+            text-transform: uppercase;
+            font-size: f.rem(24);
+            font-family: map.get(v.$font, 'ff-handwriting');
+            @include m.paddings($padding-block: f.rem(5) 0);
+        }
+        &--route,
+        &--subroute,
+        &--social {
+            @extend .nav__text;
+        }
+    }
+    &__social {
+        @include m.flexbox(
+            $direction: column,
+            $desktop-direction: row
+        );
+        @include m.dimensions($height: 100%);
+        flex: 1;
+    }
+    svg {
+        @include m.transition();
+    }
+}
+
+@include m.breakpoint-up('desktop') {
+    .nav {
+        &__list {
+            &:hover {
+                .nav {
+                    &__link {
+                        &--logo {
+                            gap: f.rem(10);
+                        }
+                        &--social {
+                            padding-inline: f.rem(45);
+                            gap: f.rem(40);
+                            justify-content: start;
+                            &:nth-of-type(1) {
+                                padding-block-start: f.rem(5);
+                            }
+                            &:nth-of-type(3) {
+                                padding-block-end: f.rem(5);
+                            }
+                        }
+                    }
+                    &__text {
+                        opacity: 1;
+                        &--logo {
+                            max-width: f.rem(300);
+                        }
+                        &--route,
+                        &--subroute {
+                            width: f.rem(300);
+                        }
+                    }
+                    &__social {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+
+        &__item {
+            flex: 0 0 auto;
+            &--route {
+                &:hover {
+                    .nav {
+                        &__link {
+                            &--nolink {
+                                flex: 0 0 f.rem(110);
+                            }
+                        }
+                        &__list {
+                            &--sub {
+                                flex: 0 0 f.rem(60);
+                            }
+                        }
+                    }
+                }
+            }
+            &--subroute {
+                min-height: 0;
+                flex: 1;
+            }
+            &--social {
+                flex-direction: row;
+            }
+        }
+        &__link {
+            &--subroute {
+                gap: f.rem(40);
+            }
+            &--nolink {
+                flex: 0 0 f.rem(110);
+                gap: f.rem(40);
+                width: auto;
+            }
+        }
+        &__text {
+            opacity: 0;
+            @include m.visible($display: flex);
+            &--logo {
+                gap: f.rem(15);
+                max-width: 0;
+                width: auto;
+            }
+        }
+    }
+}

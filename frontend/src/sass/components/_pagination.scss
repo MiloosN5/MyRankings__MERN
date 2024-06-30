@@ -1,0 +1,22 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.pagination {
+    @include m.flexbox($align-items: center);
+    ul {
+        @include m.flexbox(
+            $align-items: center, 
+            $gap: f.rem(5)
+        );
+    }
+    &__controls {
+        @include m.flexbox();
+        &--left,
+        &--right {
+            @extend .pagination__controls;
+        }
+    }
+    &__pages {
+        @include m.flexbox();
+    }
+}

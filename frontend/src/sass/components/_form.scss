@@ -1,0 +1,64 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.form {
+    &--player {
+        &__wrapper {
+            @include m.dimensions($height: 100%);
+            @include m.flexbox($direction: column);
+        }
+        &__fieldsets {
+            @include m.flexbox(
+                $direction: column,
+                $gap: f.rem(20)
+            );
+            @include m.paddings(
+                $padding-block: f.rem(20), 
+                $padding-inline: f.rem(20)
+            );
+            @include m.dimensions($max-width: f.rem(800));
+            @include m.margins($margin-inline: auto);
+        }
+        &__field {
+            @include m.flexbox(
+                $direction: column, 
+                $gap: f.rem(10)
+            );
+            label {
+                flex: 1 1 f.rem(120);
+            }
+            input {
+                flex: 1 1 f.rem(200);
+            }
+        }
+        &__button {
+            &--clickable {
+                @include m.button-clickable();
+            }
+            &--disable {
+                @include m.button-disable();
+            }
+        }
+    }
+    &--search {
+        @include m.dimensions($width: 100%);
+        &__wrapper {
+            @include m.dimensions(
+                $height: 100%, 
+                $desktop-width: 80%
+            );
+            @include m.flexbox($direction: column);
+            @include m.margins($margin-inline: auto);
+        }
+        &__field {
+            @include m.flexbox();
+            text-align: center;
+            label {
+                @include m.dimensions($width: 100%);
+            }
+            input {
+                @include m.dimensions($width: 100%);
+            }
+        }
+    }
+}

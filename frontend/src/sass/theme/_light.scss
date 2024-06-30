@@ -1,0 +1,288 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+body {
+      &.light {
+            &::-webkit-scrollbar {
+                width: f.rem(11);
+            }
+    
+            &::-webkit-scrollbar-track {
+                background: hsl(36 75% 70%);
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                background: hsl(217, 56%, 20%);
+            }
+      }
+}
+
+.nav {
+      &.light {
+            background-image: linear-gradient(to right, hsl(36 75% 70%), hsl(36 75% 46%));
+            color: hsl(217, 56%, 20%);
+      }
+}
+
+.light {
+
+      a:link {
+            color: hsl(217, 56%, 20%);
+      }
+
+      a:visited {
+            color: hsl(217, 56%, 10%);
+      }
+
+      svg {
+            color: hsl(217, 56%, 20%);
+      }
+
+
+      .nav {
+            &__item {
+                  &:hover {
+                        box-shadow: inset 0 0 200px 200px hsl(217, 56%, 20%);
+
+                        svg {
+                              color: hsl(36 75% 70%);
+                        }
+
+                        span {
+                              color: hsl(36 75% 70%);
+                        }
+
+                  }
+
+                  &--logo {
+                        background-image: linear-gradient(to right, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+
+                        svg {
+                              color: hsl(36 75% 46%);
+                        }
+
+                        a:link {
+                              color: hsl(36 75% 70%);
+                        }
+
+                        a:visited {
+                              color: hsl(36 75% 46%);
+                        }
+
+                        &:hover {
+                              svg {
+                                    color: hsl(36 75% 70%);
+                              }
+
+                              span {
+                                    color: hsl(36 75% 70%);
+                              }
+                        }
+                  }
+
+                  &--subroute {
+                        &:hover {
+                              @include m.filter('filter-2');
+                        }
+                  }
+
+                  &--logo,
+                  &--route,
+                  &--subroute,
+                  &--social {
+                        @extend .nav__item;
+                  }
+            }
+
+            &__link {
+                  &--social {
+                        &:hover {
+                              @include m.filter('filter-2');
+
+                        }
+                  }
+            }
+      }
+
+      .form {
+            &--player {
+                  &__fieldsets {
+                        background-image: linear-gradient(to right, hsl(36 75% 70%), hsl(36 75% 46%));
+                        color: hsl(217, 56%, 20%);
+                        box-shadow: hsla(217, 57%, 20%, 0.4) -5px 5px, hsla(217, 57%, 20%, 0.3) -10px 10px, hsla(217, 57%, 20%, 0.2) -15px 15px, hsla(217, 57%, 20%, 0.1) -20px 20px, hsla(217, 57%, 20%, 0.05) -25px 25px;
+                  }
+
+                  &__field {
+                        input:disabled {
+                              color: hsl(217, 56%, 20%);
+                        }
+                  }
+
+                  &__button {
+                        color: hsl(217, 56%, 20%);
+
+                        &--clickable {
+                              background-image: linear-gradient(to right, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+                              color: hsl(36 75% 70%);
+                        }
+                  }
+            }
+      }
+
+      .color-theme {
+            &__button {
+                  background-image: linear-gradient(to right, hsl(36 75% 70%), hsl(36 75% 46%));
+                  color: hsl(217, 56%, 20%);
+                  box-shadow: hsla(217, 57%, 20%, 0.4) -5px 5px, hsla(217, 57%, 20%, 0.3) -10px 10px, hsla(217, 57%, 20%, 0.2) -15px 15px, hsla(217, 57%, 20%, 0.1) -20px 20px, hsla(217, 57%, 20%, 0.05) -25px 25px;
+            }
+      }
+
+      .pagination {
+            svg {
+                  color: hsl(217, 56%, 20%);
+            }
+
+            &__pages {
+                  button {
+                        color: hsl(217, 56%, 20%);
+
+                        &.dark {
+                              background-image: linear-gradient(to right, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+                              color: hsl(36 75% 70%);
+                        }
+                  }
+            }
+      }
+
+      .dropdown {
+            svg {
+                  color: hsl(217, 56%, 20%);
+            }
+
+            &__options {
+                  box-shadow: hsla(217, 57%, 20%, 0.4) -5px 5px, hsla(217, 57%, 20%, 0.3) -10px 10px, hsla(217, 57%, 20%, 0.2) -15px 15px, hsla(217, 57%, 20%, 0.1) -20px 20px, hsla(217, 57%, 20%, 0.05) -25px 25px;
+
+                  li {
+                        &:hover {
+                              box-shadow: inset 0 0 200px 200px hsl(217, 56%, 20%); // ⭐
+                        }
+                  }
+            }
+      }
+
+      .filter {
+            &--rankings {
+                  &__wrapper {
+                        background-image: linear-gradient(to right, hsl(36 75% 70%), hsl(36 75% 46%));
+                        color: hsl(217, 56%, 20%);
+                  }
+            }
+      }
+
+      .hero {
+            &__wrapper {
+                  background-image: linear-gradient(to right, hsl(36 75% 70%), hsl(36 75% 46%));
+                  color: hsl(217, 56%, 20%);
+                  box-shadow: hsla(217, 57%, 20%, 0.4) -5px 5px, hsla(217, 57%, 20%, 0.3) -10px 10px, hsla(217, 57%, 20%, 0.2) -15px 15px, hsla(217, 57%, 20%, 0.1) -20px 20px, hsla(217, 57%, 20%, 0.05) -25px 25px;
+            }
+
+            &__title {
+                  span {
+                        background-image: linear-gradient(to right, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+                        color: hsl(36 75% 70%);
+                  }
+            }
+      }
+
+      .info--player {
+            &__wrapper {
+                  box-shadow: hsla(217, 57%, 20%, 0.4) -5px 5px, hsla(217, 57%, 20%, 0.3) -10px 10px, hsla(217, 57%, 20%, 0.2) -15px 15px, hsla(217, 57%, 20%, 0.1) -20px 20px, hsla(217, 57%, 20%, 0.05) -25px 25px;
+                  background-image: linear-gradient(to left, hsl(36 75% 70%), hsl(36 75% 46%));
+                  color: hsl(217, 56%, 20%);
+
+                  a:link {
+                        color: hsl(217, 56%, 20%);
+                  }
+
+                  a:visited {
+                        color: hsl(217, 56%, 10%);
+                  }
+            }
+
+            &__part {
+                  &:hover:not(.info--player__part--image) {
+                        background-image: linear-gradient(to right, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+
+                        * {
+                              color: hsl(36 75% 70%);
+                        }
+                  }
+
+                  &--basic,
+                  &--rankings,
+                  &--titles-WTA,
+                  &--titles-ITF,
+                  &--personal,
+                  &--grandslams {
+                        @extend .info--player__part;
+                  }
+            }
+      }
+
+      .table--rankings {
+            &__row {
+                  &--header {
+                        background-image: linear-gradient(to right, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+                        color: hsl(36 75% 70%);
+
+                        svg {
+                              color: hsl(36 75% 70%);
+                        }
+                  }
+
+                  &--player {
+                        background-image: linear-gradient(to right, hsl(36 75% 70%), hsl(36 75% 46%));
+                        color: hsl(217, 56%, 20%);
+                  }
+
+                  a:link {
+                        color: hsl(217, 56%, 20%);
+                  }
+
+                  a:visited {
+                        color: hsl(217, 56%, 10%);
+                  }
+            }
+
+            &__content {
+                  background-image: linear-gradient(to right, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+            }
+
+            &__ranking {
+                  &--player {
+                        background-image: linear-gradient(to right, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+                        color: hsl(36 75% 70%);
+                  }
+            }
+      }
+
+      .error {
+            &--input {
+                  color: hsl(217, 56%, 20%);
+            }
+      }
+
+      .rankings {
+            &__wrapper {
+                  box-shadow: hsla(217, 57%, 20%, 0.4) -5px 5px, hsla(217, 57%, 20%, 0.3) -10px 10px, hsla(217, 57%, 20%, 0.2) -15px 15px, hsla(217, 57%, 20%, 0.1) -20px 20px, hsla(217, 57%, 20%, 0.05) -25px 25px;
+            }
+            &-section {
+                  &__noplayer {
+                        background-image: linear-gradient(to right, hsl(36 75% 70%), hsl(36 75% 46%));
+                        color: hsl(217, 56%, 20%);
+                        box-shadow: hsla(217, 57%, 20%, 0.4) -5px 5px, hsla(217, 57%, 20%, 0.3) -10px 10px, hsla(217, 57%, 20%, 0.2) -15px 15px, hsla(217, 57%, 20%, 0.1) -20px 20px, hsla(217, 57%, 20%, 0.05) -25px 25px;
+                  }
+
+            }
+      }
+}

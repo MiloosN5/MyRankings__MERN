@@ -1,0 +1,5 @@
+@use '../helpers/mixins' as m;
+
+main {
+  @include m.dimensions($width: 100%);
+}

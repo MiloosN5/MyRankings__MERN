@@ -1,0 +1,27 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.error {
+    &--input {
+        background-color: hsla(0, 0%, 94%, 0.3);
+        @include m.font($font-size: f.rem(14));
+        @include m.paddings(
+            $padding-block: f.rem(5), 
+            $padding-inline: f.rem(10)
+        );
+        span {
+            @include m.font(
+                $font-size: f.rem(16), 
+                $font-weight: 700
+            );
+        }
+        &.fadeIn {
+            @include m.animation('animation-error--fadeIn');
+            animation-fill-mode: forwards;
+        }
+        &.fadeOut {
+            @include m.animation('animation-error--fadeOut');
+            animation-fill-mode: forwards;
+        }
+    }
+}

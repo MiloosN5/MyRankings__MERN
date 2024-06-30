@@ -1,0 +1,7 @@
+@use '../helpers/mixins' as m;
+
+.player-edit {
+    &__wrapper {
+        @include m.section-route();
+    }
+}

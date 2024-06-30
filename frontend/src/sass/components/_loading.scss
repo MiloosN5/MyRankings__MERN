@@ -1,0 +1,10 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.loading {
+    @include m.flexbox($direction: column);
+    @include m.paddings(
+        $padding-block: f.rem(30), 
+        $padding-inline: f.rem(30)
+    );
+}

@@ -1,0 +1,9 @@
+@use '../helpers/mixins' as m;
+
+.toggleColors-section {
+    &__wrapper {
+        @include m.dimensions($width: 50px, $height: 50px);
+        @include m.position($position: fixed, $top: 0, $right: 0);
+        @include m.flexbox($direction: column);
+    }
+}

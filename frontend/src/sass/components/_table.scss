@@ -1,0 +1,207 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.table {
+    &-cellTitle,
+    &-cellContent {
+        @include m.flexbox(
+            $direction: column, 
+            $align-items: center, 
+            $justify-content: center
+        );
+        @include m.paddings(
+            $padding-block: f.rem(5), 
+            $padding-inline: f.rem(10)
+        );
+    }
+    &--rankings {
+        &__wrapper {
+            @include m.flexbox($direction: column);
+        }
+        &__header {
+            text-align: center;
+        }
+        &__content {
+            text-align: center;
+        }
+        &__row {
+            @include m.grid(
+                $template-cols: none,
+                $mobile-template-cols: repeat(2, minmax(f.rem(50), f.rem(70))) repeat(2, minmax(f.rem(80), 1fr)) repeat(3, minmax(f.rem(50), f.rem(70))),
+                $desktop-template-cols: repeat(2, f.rem(80)) repeat(2, minmax(f.rem(120), 1fr)) repeat(4, f.rem(80))
+            );
+            @include m.paddings(
+                $padding-block: f.rem(10), 
+                $padding-inline: f.rem(10)
+            );
+            &--header {
+                @include m.hidden($display: none);
+                @extend .table--rankings__row;
+                text-transform: uppercase;
+                span {
+                    font-size: f.rem(14);
+                }
+            }
+            &--player {
+                @extend .table--rankings__row;
+                @include m.margins(
+                    $margin-block: f.rem(10), 
+                    $margin-inline: f.rem(10), 
+                    $mobile-margin-block: 0, 
+                    $mobile-margin-inline: 0
+                );
+            }
+        }
+        &__more {
+            grid-column: 1 / 5;
+            &--header {
+                @extend .table--rankings__more;
+            }
+            &--player {
+                @extend .table--rankings__more;
+            }
+        }
+        &__flag {
+            @include m.hidden($display: none);
+            &--header {
+                @extend .table--rankings__flag;
+            }
+            &--player {
+                @extend .table--rankings__flag;
+            }
+        }
+        &__firstName {
+            grid-column: 1 / 5;
+            &--header {
+                @extend .table--rankings__firstName;
+                @include m.hidden($display: none);
+            }
+            &--player {
+                @extend .table--rankings__firstName;
+            }
+        }
+        &__lastName {
+            grid-column: 1 / 5;
+            &--header {
+                @extend .table--rankings__lastName;
+            }
+            &--player {
+                @extend .table--rankings__lastName;
+            }
+        }
+        &__ranking {
+            grid-column: 1 / 5;
+            &--header {
+                @extend .table--rankings__ranking;
+            }
+            &--player {
+                @extend .table--rankings__ranking;
+            }
+        }
+        &__age {
+            @include m.hidden($display: none);
+            &--header {
+                @extend .table--rankings__age;
+            }
+            &--player {
+                @extend .table--rankings__age;
+            }
+        }
+        &__edit {
+            grid-column: 1 / 3;
+            &--header {
+                @extend .table--rankings__edit;
+            }
+            &--player {
+                @extend .table--rankings__edit;
+            }
+        }
+        &__delete {
+            grid-column: 3 / 5;
+            &--header {
+                @extend .table--rankings__delete;
+            }
+            &--player {
+                @extend .table--rankings__delete;
+            }
+        }
+    }
+}
+
+@include m.breakpoint-up('mobile') {
+
+    .table {
+        &--rankings {
+            &__row {
+                &--header {
+                    @include m.visible($display: grid);
+                }
+            }
+            &__more {
+                grid-column: 1 / 1;
+            }
+            &__flag {
+                grid-column: 2 / 2;
+                @include m.visible($display: flex);
+                &--player {
+                    img {
+                        @include m.dimensions($width: 80%);
+                    }
+                }
+            }
+            &__firstName {
+                grid-column: 3 / 3;
+                &--player {
+                    align-items: start;
+                    text-align: left;
+                }
+            }
+            &__lastName {
+                &--header {
+                    grid-column: 3 / 5;
+                }
+                &--player {
+                    grid-column: 4 / 4;
+                    align-items: start;
+                    text-align: left;
+                }
+            }
+            &__ranking {
+                grid-column: 5 / 5;
+            }
+            &__edit {
+                grid-column: 6 / 6;
+            }
+            &__delete {
+                grid-column: 7 / 7;
+            }
+        }
+    }
+}
+
+@include m.breakpoint-up('desktop') {
+
+    .table {
+        &--rankings {
+            &__firstName {
+                &--header {
+                    @include m.visible($display: flex);
+                }
+            }
+            &__lastName {
+                &--header {
+                    grid-column: 4 / 4;
+                }
+            }
+            &__age {
+                @include m.visible($display: flex);
+            }
+            &__edit {
+                grid-column: 7 / 7;
+            }
+            &__delete {
+                grid-column: 8 / 8;
+            }
+        }
+    }
+}

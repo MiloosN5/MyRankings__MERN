@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.header {
+    z-index: 100;
+    &__wrapper {
+        @include m.position(
+            $position: fixed, 
+            $left: 0, 
+            $bottom: 0
+        );
+        @include m.dimensions(
+            $height: 'h-header--standard', 
+            $width: 100%, 
+            $desktop-height: 100vh, 
+            $desktop-width: 'w-header--desktop'
+        );
+        @include m.transition();
+    }
+}
+
+@include m.breakpoint-up('desktop') {
+    .header {
+        &__wrapper {
+            &:hover {
+                width: map.get(v.$width, 'w-header--hover');
+            }
+        }
+    }
+}

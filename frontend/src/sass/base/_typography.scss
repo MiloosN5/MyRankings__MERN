@@ -1,0 +1,46 @@
+@use 'sass:map';
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+@use '../helpers/variables' as v;
+
+// Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+html {
+      font-size: map.get(v.$font, 'fs-root--standard');
+}
+
+*,
+*::before,
+*::after {
+      @include m.font()
+}
+
+h1 {
+      @include m.font(
+            $font-size: f.rem(24),
+            $letter-spacing: f.rem(20)
+      );
+      text-transform: uppercase;
+      span {
+            @include m.font(
+                  $font-family: 'ff-handwriting',
+                  $font-size: f.rem(24),
+                  $line-height: f.rem(22)
+            );
+      }
+}
+
+dd {
+      span {
+            @include m.font(
+                  $font-family: 'ff-sansSerif-2',
+                  $font-size: f.rem(22),
+                  $font-weight: 100,
+                  $letter-spacing: f.rem(2),
+                  $desktop-font-size: f.rem(22)
+            );
+      }
+}

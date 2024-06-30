@@ -1,0 +1,12 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.rankings {
+    &__wrapper {
+        @include m.flexbox($direction: column);
+        @include m.margins($margin-inline: auto);
+        @include m.overflow(hidden);
+        @include m.dimensions($max-width: f.rem(800));
+        @include m.animation('animation-table');
+    }
+}

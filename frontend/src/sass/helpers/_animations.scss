@@ -1,0 +1,32 @@
+@use '../helpers/functions' as f;
+
+@keyframes animationTable {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: f.rem(500);
+  }
+}
+
+@keyframes animationErrorFadeIn {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: f.rem(500);
+    opacity: 1;
+  }
+}
+
+@keyframes animationErrorFadeOut {
+  0% {
+    max-height: f.rem(500);
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}

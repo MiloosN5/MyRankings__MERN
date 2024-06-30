@@ -1,0 +1,15 @@
+@use '../helpers/mixins' as m;
+@use '../helpers/functions' as f;
+
+.rankings-section {
+    &__wrapper {
+        @include m.dimensions($height: 100%);
+        @include m.flexbox($direction: column);
+    }
+    &__noplayer {
+        @include m.flexbox($direction: column, $align-items: center, $justify-content: center);
+        @include m.dimensions($width: 100%, $max-width: f.rem(800));
+        @include m.margins($margin-inline: auto);
+        @include m.paddings($padding-block: f.rem(30), $padding-inline: f.rem(30));
+    }
+}

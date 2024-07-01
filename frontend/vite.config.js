@@ -7,10 +7,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Include the directory where your Sass files are located
-        // includePaths: ['./src/sass'],
-        // additionalData: `@import './src/sass/style.scss';`, // Adjust as needed
-        includePaths: ['./src/sass'], // Ensure paths are correct
+        includePaths: ['./src/sass'], 
       },
     },
   },

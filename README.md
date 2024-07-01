@@ -21,8 +21,8 @@
 - Lucide React
   * URL: https://lucide.dev/guide/packages/lucide-react
   * icons used:
-    * Eye, XSquare, Pencil, PlusCircle, Plus, ChevronRight, ChevronLeft
+    * Eye, XSquare, Pencil, PlusCircle, Plus, ChevronRight, ChevronLeft, ArrowDown
 - React Icons
   * URL: https://react-icons.github.io/react-icons/
-  * icons used: FaFacebook, FaInstagram, FaDiscord, PiGenderFemaleBold, PiGenderMaleBold
+  * icons used: FaFacebook, FaInstagram, FaDiscord, PiGenderFemaleBold, PiGenderMaleBold, GiTennisBall, MdPlayArrow, MdEmojiEvents, IoMoon, MdOutlineWbSunny
   

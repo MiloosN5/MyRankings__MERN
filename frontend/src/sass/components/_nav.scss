@@ -98,7 +98,6 @@
         &--logo {
             @extend .nav__link;
             width: 100%;
-            @include m.paddings($desktop-padding-inline: f.rem(45));
         }
 
         &--subroute {

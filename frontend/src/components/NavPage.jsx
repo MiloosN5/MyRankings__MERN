@@ -6,8 +6,7 @@ import { Eye, Plus } from 'lucide-react'
 import { GiTennisBall } from 'react-icons/gi'
 import { FaFacebook, FaInstagram, FaDiscord } from 'react-icons/fa'
 import { PiGenderFemaleBold, PiGenderMaleBold } from 'react-icons/pi';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import { MdPlayArrow } from 'react-icons/md';
 
 // contexts
 import { ThemeContext } from '../Contexts/ThemeContext'
@@ -38,7 +37,7 @@ const NavPage = ({ pageWrapperRef }) => {
                             <GiTennisBall className='icon' />
                             my rankings
                         </span>
-                        <FontAwesomeIcon icon={faCaretRight} className='icon' />
+                        <MdPlayArrow className='icon' />
                     </NavLink>
                 </li>
                 <li className='nav__item--route'>

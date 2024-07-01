@@ -7,6 +7,10 @@ import { IoMoon } from 'react-icons/io5';
 // contexts
 import { ThemeContext } from '../Contexts/ThemeContext';
 
+// images
+import LightBackground from '../assets/pattern__seamless__light.png'
+import DarkBackground from '../assets/pattern__seamless__dark.png'
+
 const ColorTheme = () => {
 
   const { theme, setTheme } = useContext(ThemeContext)
@@ -15,12 +19,12 @@ const ColorTheme = () => {
     const bodyEl = document.querySelector('body');
     if (theme === 'light') {
       setTheme('dark')
-      bodyEl.style.backgroundImage = 'url("../assets/pattern__seamless__06__dark.png")'
+      bodyEl.style.backgroundImage = `url(${LightBackground})`
       bodyEl.classList.remove('light')
       bodyEl.classList.add('dark')
     } else {
       setTheme('light')
-      bodyEl.style.backgroundImage = 'url("../assets/pattern__seamless__06.png")'
+      bodyEl.style.backgroundImage = `url(${DarkBackground})`
       bodyEl.classList.remove('dark')
       bodyEl.classList.add('light')
     }

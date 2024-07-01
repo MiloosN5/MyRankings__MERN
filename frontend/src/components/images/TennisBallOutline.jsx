@@ -4,8 +4,8 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../Contexts/ThemeContext';
 
 // images
-import TennisBallGold from '../../assets/tennis__ball__3.png'
-import TennisBallBlue from '../../assets/tennis__ball__4.png'
+import TennisBallGold from '../../assets/tennis__ball__gold.png'
+import TennisBallBlue from '../../assets/tennis__ball__blue.png'
 
 const TennisBallOutline = ({ isHovered }) => {
 

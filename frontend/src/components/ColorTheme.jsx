@@ -19,12 +19,12 @@ const ColorTheme = () => {
     const bodyEl = document.querySelector('body');
     if (theme === 'light') {
       setTheme('dark')
-      bodyEl.style.backgroundImage = `url(${LightBackground})`
+      bodyEl.style.backgroundImage = `url(${DarkBackground})`
       bodyEl.classList.remove('light')
       bodyEl.classList.add('dark')
     } else {
       setTheme('light')
-      bodyEl.style.backgroundImage = `url(${DarkBackground})`
+      bodyEl.style.backgroundImage = `url(${LightBackground})`
       bodyEl.classList.remove('dark')
       bodyEl.classList.add('light')
     }

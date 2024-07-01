@@ -15,12 +15,12 @@ const ColorTheme = () => {
     const bodyEl = document.querySelector('body');
     if (theme === 'light') {
       setTheme('dark')
-      bodyEl.style.backgroundImage = 'url("assets/pattern__seamless__06__dark.png")'
+      bodyEl.style.backgroundImage = 'url("../assets/pattern__seamless__06__dark.png")'
       bodyEl.classList.remove('light')
       bodyEl.classList.add('dark')
     } else {
       setTheme('light')
-      bodyEl.style.backgroundImage = 'url("assets/pattern__seamless__06.png")'
+      bodyEl.style.backgroundImage = 'url("../assets/pattern__seamless__06.png")'
       bodyEl.classList.remove('dark')
       bodyEl.classList.add('light')
     }

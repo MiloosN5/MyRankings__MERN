@@ -150,8 +150,7 @@ Each section or article of the page should have its own heading to serve as an i
 ### Backend
 
 While the frontend focuses on the visual aspects, the backend handles what goes on "behind the scenes." This includes the server and the database, which manage data and application logic.
-In this project, the server is created using Node.js, a JavaScript runtime environment. For the database, we use MongoDB, a NoSQL database, with MongoDB Atlas providing cloud-based data storage.
-In the backend, we define our schema and create models based on it. We also set up routes to handle various API requests. On the frontend, we use Axios to connect to these backend routes, enabling communication between the frontend and the backend.
+In this project, the server is created using Node.js, a JavaScript runtime environment. For the database, we use MongoDB, a NoSQL database, with MongoDB Atlas providing cloud-based data storage. To make a connection between Nodejs and MongoDb, we can use Mongoose library. In the backend, we define our schema and create models based on it. We also set up routes to handle various API requests. On the frontend, we use Axios to connect to these backend routes, enabling communication between the frontend and the backend.
 
 ```jsx
   const players_fetch = async () => {

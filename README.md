@@ -32,7 +32,7 @@ Once the structure (HTML), styling (CSS), and logic (JavaScript, specifically JS
 #### Color Balance (Foreground and Background) - Important for Users
 
 Good readability is crucial for retaining users, which requires proper contrast between foreground (text color) and background. Tools like the 'Coolors' website can help check the color balance.
-* Link: {https://coolors.co/contrast-checker/112a46-acc8e5} 
+* [Link](https://coolors.co/contrast-checker/112a46-acc8e5)
 
 #### React Code Organization - Important for Developers
 
@@ -104,8 +104,8 @@ Styling organization is also important. The BEM (Block, Element, Modifier) namin
 #### SAP (Single Application pages)
 
 Modern websites often strive to be Single Page Applications (SPAs), offering advantages like dynamic content loading without page refreshes, better user experience, and faster interactions. To achieve this, routing is used, and the 'react-router-dom' npm package is a popular choice.
-* Link (instalation): {https://www.npmjs.com/package/react-router-dom}
-* Link (docs): {https://reactrouter.com/en/main}
+* [Link - Installation](https://www.npmjs.com/package/react-router-dom)
+* [Link - Documentation](https://reactrouter.com/en/main)
 
 ```jsx
   import {
@@ -145,7 +145,7 @@ Modern websites often strive to be Single Page Applications (SPAs), offering adv
 #### Accessibility - Important for Users that Rely on Auditory Senses
 
 Each section or article of the page should have its own heading to serve as an introduction. While these headings might affect the visual design, they are essential for users relying on screen readers. These headings can be visually hidden but remain accessible to screen readers. One widely accepted method for this can be found at the link below:
-* Link: {https://gist.github.com/luxplanjay/6f6936b1bba7afe006fa9317b07b6045}
+* [Link](https://gist.github.com/luxplanjay/6f6936b1bba7afe006fa9317b07b6045)
   
 ### Backend
 
@@ -190,23 +190,23 @@ In this project:
 
 - Player images
   * author: si.robi
-  * URL: https://www.flickr.com/people/16732597@N07
+  * [URL](https://www.flickr.com/people/16732597@N07)
   * Note: photos can be also find at the WikimediaCommons
-    * e.g. Iga Swiatek - https://commons.wikimedia.org/wiki/File:Swiatek_RG19_(1)_(48199020336).jpg
+    * e.g. [Iga Swiatek](https://commons.wikimedia.org/wiki/File:Swiatek_RG19_(1)_(48199020336).jpg)
 - Tennis ball
   * author: pongpongching
-  * URL: https://www.freepik.com/free-vector/tennis-championship-poster-template_13986890.htm
+  * [URL](https://www.freepik.com/free-vector/tennis-championship-poster-template_13986890.htm)
 - Flags
   * author: verluk
-  * URL: https://www.flaticon.com/packs/all-national-flags-of-the-world-very-high-quality-14009628
+  * [URL](https://www.flaticon.com/packs/all-national-flags-of-the-world-very-high-quality-14009628)
 
 ### Icons
 
 - Lucide React
-  * URL: https://lucide.dev/guide/packages/lucide-react
+  * [URL](https://lucide.dev/guide/packages/lucide-react)
   * icons used:
     * Eye, XSquare, Pencil, PlusCircle, Plus, ChevronRight, ChevronLeft, ArrowDown
 - React Icons
-  * URL: https://react-icons.github.io/react-icons/
+  * [URL](https://react-icons.github.io/react-icons/)
   * icons used: FaFacebook, FaInstagram, FaDiscord, PiGenderFemaleBold, PiGenderMaleBold, GiTennisBall, MdPlayArrow, MdEmojiEvents, IoMoon, MdOutlineWbSunny
   

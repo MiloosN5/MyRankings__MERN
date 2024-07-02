@@ -1,6 +1,6 @@
-#MyRankings
+# MyRankings
 
-##Credits
+## Credits
 
 ### Images
 

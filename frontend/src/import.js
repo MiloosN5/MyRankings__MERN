@@ -13,6 +13,7 @@ import Greece from './assets/Greece.png'
 import Italy from './assets/Italy.png'
 import Kazakhstan from './assets/Kazakhstan.png'
 import Latvia from './assets/Latvia.png'
+import Norway from './assets/Norway.png'
 import Poland from './assets/Poland.png'
 import Romania from './assets/Romania.png'
 import Russia from './assets/Russia.png'
@@ -40,6 +41,7 @@ const countries = {
     Italy,
     Kazakhstan,
     Latvia,
+    Norway,
     Poland,
     Romania,
     Russia,

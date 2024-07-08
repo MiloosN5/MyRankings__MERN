@@ -19,6 +19,7 @@ const Flag = ({ country }) => {
     Italy: CountriesFlag.Italy,
     Kazakhstan: CountriesFlag.Kazakhstan,
     Latvia: CountriesFlag.Latvia,
+    Norway: CountriesFlag.Norway,
     Poland: CountriesFlag.Poland,
     Romania: CountriesFlag.Romania,
     Russia: CountriesFlag.Russia,

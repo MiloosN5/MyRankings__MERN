@@ -3,6 +3,7 @@
 
 body {
       &.light {
+            background-image: url('./assets/pattern__seamless__light.png');
             &::-webkit-scrollbar {
                 width: f.rem(11);
             }

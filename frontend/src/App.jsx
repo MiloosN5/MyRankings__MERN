@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // react router
 import {
@@ -23,6 +23,8 @@ import Home from './pages/Home'
 // context
 import { ThemeContext } from './Contexts/ThemeContext'
 
+import preloadImages from './utils/preloadImages';
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<PageLayout />} >
@@ -43,6 +45,10 @@ const router = createBrowserRouter(
 )
 
 const App = () => {
+
+  useEffect(() => {
+    preloadImages(); // Pozivamo funkciju kada se komponenta mount-uje
+  }, []);
 
   const [theme, setTheme] = useState('light')
   

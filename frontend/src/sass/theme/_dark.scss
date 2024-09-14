@@ -3,6 +3,7 @@
 
 body {
     &.dark {
+        background-image: url('./assets/pattern__seamless__dark.png');
         &::-webkit-scrollbar {
             width: f.rem(11);
         }

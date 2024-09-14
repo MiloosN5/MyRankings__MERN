@@ -8,8 +8,8 @@ import { IoMoon } from 'react-icons/io5';
 import { ThemeContext } from '../Contexts/ThemeContext';
 
 // images
-import LightBackground from '../assets/pattern__seamless__light.png'
-import DarkBackground from '../assets/pattern__seamless__dark.png'
+// import LightBackground from '../assets/pattern__seamless__light.png'
+// import DarkBackground from '../assets/pattern__seamless__dark.png'
 
 const ColorTheme = () => {
 
@@ -19,12 +19,10 @@ const ColorTheme = () => {
     const bodyEl = document.querySelector('body');
     if (theme === 'light') {
       setTheme('dark')
-      bodyEl.style.backgroundImage = `url(${DarkBackground})`
       bodyEl.classList.remove('light')
       bodyEl.classList.add('dark')
     } else {
       setTheme('light')
-      bodyEl.style.backgroundImage = `url(${LightBackground})`
       bodyEl.classList.remove('dark')
       bodyEl.classList.add('light')
     }

@@ -121,7 +121,8 @@
             @include m.flexbox(
                 $direction: column, 
                 $align-items: center, 
-                $justify-content: center
+                $justify-content: center,
+                $gap: f.rem(20)
             );
 
             @include m.paddings(

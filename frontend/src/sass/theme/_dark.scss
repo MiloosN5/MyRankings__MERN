@@ -288,3 +288,9 @@ body {
         }
     }
 }
+
+.warning {
+    &.dark {
+        background-image: linear-gradient(to left, hsl(217, 56%, 20%), hsl(217, 56%, 10%));
+    }
+}

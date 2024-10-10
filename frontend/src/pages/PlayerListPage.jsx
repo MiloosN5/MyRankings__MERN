@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useContext } from 'react'
 import { useLocation } from 'react-router-dom';
 
 // components
@@ -9,10 +9,12 @@ import axios from 'axios'
 
 // contexts
 import { useSearchParamsContext } from '../Contexts/SearchParamsContext';
+import { ThemeContext } from '../Contexts/ThemeContext';
 
 const PlayerListPage = ({ playerGender }) => {
 
     const { searchParams, updateSearchParams } = useSearchParamsContext();
+    const { theme } = useContext(ThemeContext)
     const location = useLocation()
     const rankingsWrapperRef = useRef()
 
@@ -110,6 +112,9 @@ const PlayerListPage = ({ playerGender }) => {
                                 (
                                     <div className='rankings-section__noplayer'>
                                         <p>List is empty</p>
+                                        <p className={`warning ${theme === 'light' ? 'light' : 'dark'}`}>
+                                            ⚠️Since the website is hosted on a FREE plan, the server goes to sleep after periods of inactivity. This usually causes a delay of 1-2 minutes when fetching data
+                                        </p>
                                     </div>
                                 )
                         }

@@ -331,13 +331,15 @@ const InfoPlayer = ({ playerGender, id, slug }) => {
               (
                 <div className='info--player__noinfo'>
                   <p>There is no info about this player</p>
+                  <p className={`warning ${theme === 'light' ? 'light' : 'dark'}`}>
+                    ⚠️Since the website is hosted on a FREE plan, the server goes to sleep after periods of inactivity. This usually causes a delay of 1-2 minutes when fetching data
+                  </p>
                   <button onClick={() => navigate_back()}>
                     Return back
                   </button>
                 </div>
               )
         }
-
       </div>
     </article>
   )

@@ -80,22 +80,27 @@ const NavPage = ({ pageWrapperRef }) => {
                         </li>
                     </ul>
                 </li>
-                <li className='nav__item--social'>
-                    <article className='nav__social'>
-                        <h5 className='sr-only'>External social links</h5>
-                        <a className='nav__link--social' href='https://facebook.com/'>
-                            <FaFacebook className='icon' />
-                            <span className='nav__text--social'>Facebook</span>
-                        </a>
-                        <a className='nav__link--social' href='https://instagram.com/'>
-                            <FaInstagram className='icon' />
-                            <span className='nav__text--social'>Instagram</span>
-                        </a>
-                        <a className='nav__link--social' href='https://discord.com/'>
-                            <FaDiscord className='icon' />
-                            <span className='nav__text--social'>Discord</span>
-                        </a>
-                    </article>
+                <li className='nav__item--external'>
+                    <ul className='nav__list--social'>
+                        <li className='nav__item--social'>
+                            <a className='nav__link--social' href='https://facebook.com/'>
+                                <FaFacebook className='icon' />
+                                <span className='nav__text--social'>Facebook</span>
+                            </a>
+                        </li>
+                        <li className='nav__item--social'>
+                            <a className='nav__link--social' href='https://instagram.com/'>
+                                <FaInstagram className='icon' />
+                                <span className='nav__text--social'>Instagram</span>
+                            </a>
+                        </li>
+                        <li className='nav__item--social'>
+                            <a className='nav__link--social' href='https://discord.com/'>
+                                <FaDiscord className='icon' />
+                                <span className='nav__text--social'>Discord</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>

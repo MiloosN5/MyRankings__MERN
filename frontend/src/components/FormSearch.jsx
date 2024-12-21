@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import React, { useEffect, useState, useRef } from 'react'
 
 // components
 import Input from './Input'
@@ -12,15 +11,33 @@ const Search = () => {
     const { searchParams, updateSearchParams } = useSearchParamsContext();
     const [inputVal, setInputVal] = useState(searchParams.get('search') || '')
 
+    const useDebounce = (callback, delay) => {
+        const timeoutRef = useRef(null);
+    
+        const debouncedFunction = (...args) => {
+            clearTimeout(timeoutRef.current);
+    
+            timeoutRef.current = setTimeout(() => {
+                callback(...args);
+            }, delay);
+        };
+    
+        return debouncedFunction;
+    };
+
+    const debouncedUpdateSearchParams = useDebounce((textInput) => {
+        if (textInput.length === 0) {
+            updateSearchParams('search', null);
+        } else {
+            updateSearchParams('search', textInput);
+        }
+    }, 500);
+
     const search_query = (e) => {
         const textInput = e.target.value;
-        setInputVal(textInput)
-        if (textInput.length === 0) {
-            updateSearchParams('search', null)
-        } else {
-            updateSearchParams('search', textInput)
-        }
-    }
+        setInputVal(textInput);
+        debouncedUpdateSearchParams(textInput);
+    };
 
     useEffect(() => {
         setInputVal(searchParams.get('search') || '')

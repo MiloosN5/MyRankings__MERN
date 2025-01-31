@@ -1,4 +1,4 @@
-# MyRankings
+# MyRankings (MERN Project)
 
 ## Table of contents
 

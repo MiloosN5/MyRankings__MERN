@@ -42,7 +42,7 @@
 
 ## About
 
-This project is designed to showcase fullstack development skills, encompassing both frontend and backend work. It features a website where users can create their own tennis ranking lists for both men's and women's singles.
+This project is designed to showcase full-stack development skills, encompassing both frontend and backend work. It features a website where users can create their own tennis ranking lists for both men's and women's singles.
 
 Key Features:
 * Real-Time Updates: Users can see changes immediately thanks to asynchronous functions, eliminating the need to reload the page.

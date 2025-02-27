@@ -80,52 +80,50 @@ const TableRankings = ({
                     </div>
                 </div>
                 <div role='rowgroup' className='table--rankings__content'>
-                    {
-                        playersFiltered?.map((player, index) => {
-                            return (
-                                <article
-                                    className='table--rankings__row--player'
-                                    key={index}
-                                    role='row'
-                                >
-                                    <div className='table--rankings__more--player table-cellContent'>
-                                        <NavLink to={`/players/${playerGender}/${player._id}/${player.slug}`}>
-                                            <PlusCircle className='icon' />
-                                        </NavLink>
-                                    </div>
-                                    <div className='table--rankings__flag--player table-cellContent'>
-                                        <Flag country={`${player.country[0]}`} />
-                                    </div>
-                                    <div className='table--rankings__firstName--player table-cellContent'>
-                                        <span>{player.firstName}</span>
-                                    </div>
-                                    <div className='table--rankings__lastName--player table-cellContent'>
-                                        <span>{player.lastName}</span>
-                                    </div>
-                                    <div className={`table--rankings__ranking--player table-cellContent ${theme === 'light' ? 'dark' : 'light'}`}>
-                                        <span>{player.ranking}</span>
-                                    </div>
-                                    <div className='table--rankings__age--player table-cellContent'>
-                                        <span>{player.age}</span>
-                                    </div>
-                                    <div className='table--rankings__edit--player table-cellContent'>
-                                        <NavLink to={`/players/${playerGender}/${player._id}/${player.slug}/edit`}>
-                                            <Pencil className='icon' />
-                                        </NavLink>
-                                    </div>
-                                    <div className='table--rankings__delete--player table-cellContent'>
-                                        <button onClick={(e) => player_remove(e, player._id)}>
-                                            <XSquare className='icon' />
-                                        </button>
-                                    </div>
-                                </article>
-                            )
-                        })
-                    }
+                    {playersFiltered?.map((player, index) => {
+                        return (
+                            <article
+                                className='table--rankings__row--player'
+                                key={index}
+                                role='row'
+                            >
+                                <div className='table--rankings__more--player table-cellContent'>
+                                    <NavLink to={`/players/${playerGender}/${player._id}/${player.slug}`}>
+                                        <PlusCircle className='icon' />
+                                    </NavLink>
+                                </div>
+                                <div className='table--rankings__flag--player table-cellContent'>
+                                    <Flag country={`${player.country[0]}`} />
+                                </div>
+                                <div className='table--rankings__firstName--player table-cellContent'>
+                                    <span>{player.firstName}</span>
+                                </div>
+                                <div className='table--rankings__lastName--player table-cellContent'>
+                                    <span>{player.lastName}</span>
+                                </div>
+                                <div className={`table--rankings__ranking--player table-cellContent ${theme === 'light' ? 'dark' : 'light'}`}>
+                                    <span>{player.ranking}</span>
+                                </div>
+                                <div className='table--rankings__age--player table-cellContent'>
+                                    <span>{player.age}</span>
+                                </div>
+                                <div className='table--rankings__edit--player table-cellContent'>
+                                    <NavLink to={`/players/${playerGender}/${player._id}/${player.slug}/edit`}>
+                                        <Pencil className='icon' />
+                                    </NavLink>
+                                </div>
+                                <div className='table--rankings__delete--player table-cellContent'>
+                                    <button onClick={(e) => player_remove(e, player._id)}>
+                                        <XSquare className='icon' />
+                                    </button>
+                                </div>
+                            </article>
+                        )
+                    })}
                 </div>
             </div>
         </article>
-    )
-}
+    );
+};
 
-export default TableRankings
+export default TableRankings;

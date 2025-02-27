@@ -89,21 +89,23 @@
 }
 
 @mixin font(
-    $font-family: 'ff-sansSerif-root', $font-size: 'fs-root--standard', $font-weight: 'fw-root', $letter-spacing: 'ls-root', $line-height: 'lh-root',
-    $mobile-font-family: null, $mobile-font-size: null, $mobile-font-weight: null, $mobile-letter-spacing: null, $mobile-line-height: null,
-    $desktop-font-family: null, $desktop-font-size: 'fs-root--desktop', $desktop-font-weight: null, $desktop-letter-spacing: null, $desktop-line-height: null
+    $font-family: 'ff-sansSerif-root', $font-size: 'fs-root--standard', $font-weight: 'fw-root', $letter-spacing: 'ls-root', $line-height: 'lh-root', $word-break: break-all,
+    $mobile-font-family: null, $mobile-font-size: null, $mobile-font-weight: null, $mobile-letter-spacing: null, $mobile-line-height: null, $mobile-word-break: break-word,
+    $desktop-font-family: null, $desktop-font-size: 'fs-root--desktop', $desktop-font-weight: null, $desktop-letter-spacing: null, $desktop-line-height: null, $desktop-word-break: keep-all
 ) {
     font-family: map.get(v.$font, $font-family) or $font-family;
     font-size: map.get(v.$font, $font-size) or $font-size;
     font-weight: map.get(v.$font, $font-weight) or $font-weight;
     letter-spacing: map.get(v.$font, $letter-spacing) or $letter-spacing;
     line-height: map.get(v.$font, $line-height) or $line-height;
+    word-break: map.get(v.$font, $word-break) or $word-break;
     @include breakpoint-up('mobile') {
         font-family: map.get(v.$font, $mobile-font-family) or $mobile-font-family;
         font-size: map.get(v.$font, $mobile-font-size) or $mobile-font-size;
         font-weight: map.get(v.$font, $mobile-font-weight) or $mobile-font-weight;
         letter-spacing: map.get(v.$font, $mobile-letter-spacing) or $mobile-letter-spacing;
         line-height: map.get(v.$font, $mobile-line-height) or $mobile-line-height;
+        word-break: map.get(v.$font, $mobile-word-break) or $mobile-word-break;
     }    
     @include breakpoint-up('desktop') {
         font-family: map.get(v.$font, $desktop-font-family) or $desktop-font-family;
@@ -111,6 +113,7 @@
         font-weight: map.get(v.$font, $desktop-font-weight) or $desktop-font-weight;
         letter-spacing: map.get(v.$font, $desktop-letter-spacing) or $desktop-letter-spacing;
         line-height: map.get(v.$font, $desktop-line-height) or $desktop-line-height;
+        word-break: map.get(v.$font, $desktop-word-break) or $desktop-word-break;
     }    
 }
 

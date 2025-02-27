@@ -1,7 +1,3 @@
 @use '../helpers/mixins' as m;
 
-.home {
-    &__wrapper {
-        @include m.section-route();
-    }
-}
+.home {}

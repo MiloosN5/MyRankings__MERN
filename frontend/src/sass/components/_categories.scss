@@ -50,17 +50,26 @@
 
         &--men {
             @extend .categories__link;
-            background-image: url('./assets/Djokovic__01__edit.jpg');
+            filter: sepia(1);
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/43/Djokovic_MCM23_%285%29_%2852883600048%29.jpg');
             &:hover {
-                background-image: url('./assets/Djokovic__01.jpg');
+                filter: sepia(0);
             }
         }
 
         &--women {
             @extend .categories__link;
-            background-image: url('./assets/Swiatek__01__edit.jpg');
+            filter: sepia(1);
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/Swiatek_RG19_%281%29_%2848199020336%29.jpg');
             &:hover {
-                background-image: url('./assets/Swiatek__01.jpg');
+                filter: sepia(0);
+            }
+        }
+
+        figcaption {
+            @include m.paddings($padding-inline: f.rem(10));
+            a {
+                font-weight: 900;
             }
         }
     }

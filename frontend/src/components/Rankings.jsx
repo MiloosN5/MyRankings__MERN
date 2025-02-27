@@ -5,23 +5,20 @@ import FilterRankings from './FilterRankings';
 import TableRankings from './TableRankings';
 
 const Rankings = forwardRef(
-    (
-        {
-            playersCountries,
-            pageCurr,
-            setPageCurr,
-            pagesCount,
-            playersFiltered,
-            playerGender,
-            player_remove
-        },
-        ref
-    ) => {
+    ({
+        playersCountries,
+        pageCurr,
+        setPageCurr,
+        pagesCount,
+        playersFiltered,
+        playerGender,
+        player_remove
+    }, ref) => {
 
         return (
             <article className='rankings'>
                 <div className='rankings__wrapper' ref={ref}>
-                    <h4 className='sr-only'>Rankings</h4>
+                    <h3 className='sr-only'>Rankings</h3>
                     <FilterRankings
                         playersCountries={playersCountries}
                         pageCurr={pageCurr}
@@ -38,6 +35,6 @@ const Rankings = forwardRef(
             </article>
         )
     }
-)
+);
 
-export default Rankings
+export default Rankings;

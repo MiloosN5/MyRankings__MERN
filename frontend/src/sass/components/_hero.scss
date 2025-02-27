@@ -19,6 +19,7 @@
         &__title {
                 @include m.flexbox(
                         $justify-content: center, 
+                        $align-items: center,
                         $gap: f.rem(30)
                 );
                 @include m.paddings(
@@ -32,12 +33,15 @@
                                 $justify-content: center
                         );
                         @include m.margins($margin-block: auto);
-                        @include m.dimensions(
-                                $width: f.rem(40), 
-                                $height: f.rem(40)
-                        );
                         @include m.border($border-radius: 100%);
-                        @include m.paddings($padding-block: f.rem(5) 0);
+                        @include m.paddings($padding-block: f.rem(15), $padding-inline: f.rem(15));
                 }
+        }
+
+        &__content {
+                @include m.flexbox(
+                        $direction: column,
+                        $gap: f.rem(20)
+                );
         }
 }

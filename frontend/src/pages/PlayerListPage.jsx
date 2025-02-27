@@ -87,44 +87,35 @@ const PlayerListPage = ({ playerGender }) => {
     }, [playerGender]);
 
     return (
-        <section className='player-list'>
-            <div className='player-list__wrapper'>
-                <h2 className='sr-only'>Player List route</h2>
-                <section className='rankings-section'>
-                    <div className='rankings-section__wrapper'>
-                        <h3 className='sr-only'>Player List rankings</h3>
-                        {
-                            playersFiltered?.length > 0
-                                ?
-                                (
-                                    <Rankings
-                                        playerGender={playerGender}
-                                        playersCountries={playersCountries}
-                                        playersFiltered={playersFiltered}
-                                        player_remove={player_remove}
-                                        pageCurr={pageCurr}
-                                        pagesCount={pagesCount}
-                                        setPageCurr={setPageCurr}
-                                        ref={rankingsWrapperRef}
-                                    />
-                                )
-                                :
-                                (
-                                    <div className='rankings-section__noplayer'>
-                                        <p>List is empty</p>
-                                        <p className={`warning ${theme === 'light' ? 'light' : 'dark'}`}>
-                                            ⚠️Since the website is hosted on a FREE plan, the server goes to sleep after periods of inactivity. This usually causes a delay of 1-2 minutes when fetching data
-                                        </p>
-                                    </div>
-                                )
-                        }
-                    </div>
-                </section>
-            </div>
-        </section>
+        <div className='player-list'>
+            <section className='rankings-section'>
+                <div className='rankings-section__wrapper'>
+                    <h2 className='sr-only'>Player List rankings</h2>
+                    {playersFiltered?.length > 0 ? (
+                        <Rankings
+                            playerGender={playerGender}
+                            playersCountries={playersCountries}
+                            playersFiltered={playersFiltered}
+                            player_remove={player_remove}
+                            pageCurr={pageCurr}
+                            pagesCount={pagesCount}
+                            setPageCurr={setPageCurr}
+                            ref={rankingsWrapperRef}
+                        />
+                    ) : (
+                        <div className='rankings-section__noplayer'>
+                            <p>List is empty</p>
+                            <p className={`warning ${theme === 'light' ? 'light' : 'dark'}`}>
+                                ⚠️Since the website is hosted on a FREE plan, the server goes to sleep after periods of inactivity. This usually causes a delay of 1-2 minutes when fetching data
+                            </p>
+                        </div>
+                    )}
+                </div>
+            </section>
+        </div>
     )
-}
+};
 
-export default PlayerListPage
+export default PlayerListPage;
 
 

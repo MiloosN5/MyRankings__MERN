@@ -55,17 +55,15 @@ const Dropdown = (
                     ref={optionsRef}
                     onClick={(e) => dropdown_pick(e)}
                 >
-                    {
-                        list?.map((i, index) => (
-                            <li key={index}>
-                                <button>{i}</button>
-                            </li>
-                        ))
-                    }
+                    {list?.map((i, index) => (
+                        <li key={index}>
+                            <button>{i}</button>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </article>
-    )
-}
+    );
+};
 
-export default Dropdown
+export default Dropdown;

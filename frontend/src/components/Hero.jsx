@@ -16,13 +16,15 @@ const Hero = () => {
         <h1 className='hero__title'>
           <span className='hero__title--accent'>my</span> rankings
         </h1>
-        <Categories />
-        <p className='hero__desc'>
-          Make your own tennis ranking list for both men's and women's singles.
-        </p>
+        <div className='hero__content'>
+          <Categories />
+          <p className='hero__desc'>
+            Make your own tennis ranking list for both men's and women's singles.
+          </p>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

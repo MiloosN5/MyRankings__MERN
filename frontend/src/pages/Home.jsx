@@ -3,13 +3,10 @@ import Hero from '../components/Hero';
 
 const Home = () => {
   return (
-    <section className='home'>
-      <div className='home__wrapper'>
-        <h2 className='sr-only'>Home route</h2>
-        <Hero />
-      </div>
-    </section>
-  )
-}
+    <div className='home'>
+      <Hero />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

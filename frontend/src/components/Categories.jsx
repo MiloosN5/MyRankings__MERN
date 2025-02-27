@@ -30,6 +30,7 @@ const Categories = () => {
                         >
                             <figcaption>
                                 <a href='https://commons.wikimedia.org/wiki/File:Djokovic_MCM23_(5)_(52883600048).jpg' onClick={(e) => e.stopPropagation()}>si.robi (Flickr)</a>
+                                <a href='https://creativecommons.org/licenses/by-sa/2.0/deed.en'>CC BY-SA 2.0</a>
                             </figcaption>
                         </figure>
                     </section>
@@ -48,6 +49,7 @@ const Categories = () => {
                         >
                             <figcaption>
                                 <a href='https://commons.wikimedia.org/wiki/File:Swiatek_RG19_(1)_(48199020336).jpg' onClick={(e) => e.stopPropagation()}>si.robi (Flickr)</a>
+                                <a href='https://creativecommons.org/licenses/by-sa/2.0/deed.en'>CC BY-SA 2.0</a>
                             </figcaption>
                         </figure>
                     </section>

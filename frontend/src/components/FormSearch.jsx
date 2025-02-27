@@ -60,7 +60,7 @@ const Search = () => {
                 </form>
             </div>
         </article>
-    )
-}
+    );
+};
 
-export default Search
+export default Search;

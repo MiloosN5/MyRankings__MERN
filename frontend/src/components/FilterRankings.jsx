@@ -61,7 +61,7 @@ const FilterRankings = (
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default FilterRankings
+export default FilterRankings;

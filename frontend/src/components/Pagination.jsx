@@ -17,7 +17,7 @@ const Pagination = (
 
     const { theme } = useContext(ThemeContext)
     const { searchParams, updateSearchParams } = useSearchParamsContext();
-    const [ pagesArr, setPagesArr ] = useState([])
+    const [pagesArr, setPagesArr] = useState([])
 
     const page_prev = () => {
         if (pageCurr === 1) {
@@ -55,23 +55,21 @@ const Pagination = (
                         <ChevronLeft className='icon' />
                     </button>
                 </li>
-                {
-                    pagesArr.map((n, i) => (
-                        <li key={i} className='pagination__pages'>
-                            <button
-                                className={`${pageCurr === n && theme === 'light'
-                                        ? 'dark'
-                                        : pageCurr === n && theme === 'dark'
-                                            ? 'light'
-                                            : ''
+                {pagesArr.map((n, i) => (
+                    <li key={i} className='pagination__pages'>
+                        <button
+                            className={`${pageCurr === n && theme === 'light'
+                                ? 'dark'
+                                : pageCurr === n && theme === 'dark'
+                                    ? 'light'
+                                    : ''
                                 }`}
-                                onClick={(e) => page_pick(e, n)}
-                            >
-                                {n}
-                            </button>
-                        </li>
-                    ))
-                }
+                            onClick={(e) => page_pick(e, n)}
+                        >
+                            {n}
+                        </button>
+                    </li>
+                ))}
                 <li className='pagination__controls--right'>
                     <button onClick={page_next}>
                         <ChevronRight className='icon' />
@@ -79,7 +77,7 @@ const Pagination = (
                 </li>
             </ul>
         </nav>
-    )
-}
+    );
+};
 
-export default Pagination
+export default Pagination;

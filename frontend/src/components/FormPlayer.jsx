@@ -206,7 +206,7 @@ const FormPlayer = (
   return (
     <article className={`form--player ${theme === 'light' ? 'light' : 'dark'}`}>
       <div className='form--player__wrapper'>
-        <h4 className='sr-only'>Form</h4>
+        <h3 className='sr-only'>Form</h3>
         {
           isLoading
             ?
@@ -303,7 +303,7 @@ const FormPlayer = (
         }
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default FormPlayer
+export default FormPlayer;

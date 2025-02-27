@@ -1,7 +1,3 @@
 @use '../helpers/mixins' as m;
 
-.player-add {
-    &__wrapper {
-        @include m.section-route(); 
-    }
-}
+.player-add {}

@@ -15,7 +15,7 @@ html {
 *,
 *::before,
 *::after {
-      @include m.font()
+      @include m.font();
 }
 
 h1 {
@@ -25,11 +25,7 @@ h1 {
       );
       text-transform: uppercase;
       span {
-            @include m.font(
-                  $font-family: 'ff-handwriting',
-                  $font-size: f.rem(24),
-                  $line-height: f.rem(22)
-            );
+            word-break: keep-all;
       }
 }
 

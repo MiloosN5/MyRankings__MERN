@@ -24,6 +24,19 @@ Key Features:
 * Theme Toggle: Users can switch between light and dark themes, a common feature in modern websites.
 * Accessibility: The website includes accessibility features to cater to a wide range of user needs.
 
+### Tools/Requirements:
+- MongoDB ( Database)
+- Express + Node.js ( Backend / Server)
+- React ( Frontend)
+- Node.js ( Runtime for Backend)
+- Accessibility
+- Responsiveness (Viewport size, REM / EM)
+- Transitions
+- Light / Dark Themes
+- RESTful API
+- SPA (Single-page application)
+- Reusable Code
+
 ### Missing
 
 Currently, the project works with a single database created using MongoDB. To allow each user to have their own database, multiple instances and user registration would be required. As this project is primarily for demonstrating skills, these features may be added in the future or included in future projects.

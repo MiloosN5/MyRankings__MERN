@@ -4,6 +4,7 @@
 
 - [Preview](#preview)
 - [About](#about)
+  - [Tools & Requirements](#tools--requirements)   
   - [Missing](#missing)
   - [Frontend](#frontend)
   - [Backend](#backend)
@@ -24,7 +25,7 @@ Key Features:
 * Theme Toggle: Users can switch between light and dark themes, a common feature in modern websites.
 * Accessibility: The website includes accessibility features to cater to a wide range of user needs.
 
-### Tools/Requirements:
+### Tools & Requirements:
 - MongoDB ( Database)
 - Express + Node.js ( Backend / Server)
 - React ( Frontend)

@@ -11,34 +11,7 @@
 
 ## Preview
 
-<table>
-  <thead>
-    <th>Route</th>
-    <th>Desktop</th>
-    <th>Tablet</th>
-    <th>Mobile</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td>/</td>
-      <td><img src="./frontend/src/Preview/home__desktop.png"  width="100%;" height="auto" alt="" /></td>
-      <td><img src="./frontend/src/Preview/home__tablet.png"  width="100%;" height="auto" alt="" /></td>
-      <td> <img src="./frontend/src/Preview/home__mobile.png"  width="100%;" height="auto" alt="" /></td>
-    </tr>
-    <tr>
-      <td>/players/women</td>
-      <td><img src="./frontend/src/Preview/women__desktop.png"  width="100%;" height="auto" alt="" /></td>
-      <td><img src="./frontend/src/Preview/women__tablet.png"  width="100%;" height="auto" alt="" /></td>
-      <td> <img src="./frontend/src/Preview/women__mobile.png"  width="100%;" height="auto" alt="" /></td>
-    </tr>
-    <tr>
-      <td>/players/men/new</td>
-      <td><img src="./frontend/src/Preview/new__desktop.png"  width="100%;" height="auto" alt="" /></td>
-      <td><img src="./frontend/src/Preview/new__tablet.png"  width="100%;" height="auto" alt="" /></td>
-      <td> <img src="./frontend/src/Preview/new__mobile.png"  width="100%;" height="auto" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
+  <img src="./frontend/src/preview/MyRankings__LinkedIn__1.png"  width="100%;" height="auto" alt="" />
 
 ## About
 

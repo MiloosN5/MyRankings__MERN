@@ -1,5 +1,7 @@
 # MyRankings (MERN Project)
 
+- Live: ✔️ [[Link](https://myrankings-frontend.onrender.com/)]
+
 ## Table of contents
 
 - [Preview](#preview)
